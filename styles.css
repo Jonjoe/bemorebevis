@@ -1,0 +1,85 @@
+:root, html {
+  height:100%;
+}
+
+main {
+  position: relative;
+}
+
+body {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  height:100%;
+  width:100%;
+  padding: 0;
+  overflow:hidden; /* Blow me */
+  cursor:url('./sm-bevis.png'), auto;
+  margin: 0;
+  -webkit-animation: bg 5s infinite; /* Chrome, Safari, Opera */
+}
+
+ul {
+  list-style-type:none;
+  padding: 0;
+  margin: 0;
+  font-family: 'Sigmar One', cursive;
+  text-transform: uppercase;
+  font-weight:900;
+  font-size:3rem;
+}
+
+.is_hidden {display:none;}
+
+#thebevis {
+  height:490px;
+  width:380px;
+}
+
+#shades {
+  position: absolute;
+  top:0;
+  width:670px;
+  left:calc(50% - 335px);
+  -webkit-animation: shades 2s; /* Chrome, Safari, Opera */
+}
+
+#joint {
+  position: absolute;
+  bottom:0;
+  width:40px;
+  left:calc(50% - -90px);
+  -webkit-animation: joint 2s; /* Chrome, Safari, Opera */
+  transform:rotate(135deg);
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes bg {
+    0% {background: #bada55;}
+    33% {background:#1abc9c;}
+    66% {background:#f9d041;}
+    100% {background: #bada55;}
+}
+
+@-webkit-keyframes shades {
+    from {
+      top:-250px;
+      opacity: 0;
+    }
+    to {
+      top:0;
+      opacity: 1;
+    }
+}
+
+@-webkit-keyframes joint {
+    0% {
+      bottom:-100px;
+      opacity: 0;
+    }
+    100% {
+      bottom:0;
+      opacity: 1;
+    }
+}

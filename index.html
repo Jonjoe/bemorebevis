@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Bevis</title>
+  <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="stage1" class="">
+    <ul>
+      <li>Be</li>
+      <li>More</li>
+      <li>Bevis</li>
+    </ul>
+  </main>
+  <main id="stage2" class="is_hidden">
+    <img id="thebevis" src="./graphic.png" alt="">
+    <img id="shades" src="./shades.png" alt="">
+    <img id="joint" src="./big-joint.png" alt="">
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script>
+      var audio = {};
+      audio = new Audio();
+      audio.src = "./sounds/triple.mp3";;
+      audio.play();
+
+      $(window).click(function () {
+        var i = Math.floor(Math.random()*31) + 1;
+        var file = "./sounds/"+i+".wav";
+        console.log(file);
+        audio = new Audio();
+        audio.src = file;
+        audio.volume = 1;
+        audio.play();
+      });
+
+      setTimeout(function(){
+        $('#stage1').addClass('is_hidden');
+        $('#stage2').removeClass('is_hidden');
+        setTimeout(function(){
+          audio = new Audio();
+          audio.src = "./sounds/ohyeh.mp3";
+          audio.play();
+        }, 1500)
+      }, 1500)
+  </script>
+</body>
+</html>
